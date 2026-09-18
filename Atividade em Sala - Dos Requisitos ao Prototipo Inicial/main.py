@@ -71,6 +71,7 @@ def main():
             pwd = input("Escolha uma Senha (mínimo 4 caracteres): ")
             sucesso, msg = criar_conta(usr, pwd)
             print(f"\n> {msg}")
+            menu_estacionamento(usr)
             
         elif opcao == "0":
             print("\nPrograma encerrado.")

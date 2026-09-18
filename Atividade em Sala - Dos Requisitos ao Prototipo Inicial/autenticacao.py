@@ -15,14 +15,14 @@ def _decodificar(texto_codificado: str) -> str:
     """Descriptografa a string em Base64."""
     return base64.b64decode(texto_codificado.encode('utf-8')).decode('utf-8')
 
-#Função que le o banco de dados se ele existir e retorna uma lista dos usuarios e senhas:
+#Função que cria o arquivo do banco de dados caso ele nn exista:
 def inicializar_base_usuarios():
     if not os.path.exists(ARQUIVO_USUARIOS):
         with open(ARQUIVO_USUARIOS, mode='w', newline='', encoding='utf-8') as f:
             writer = csv.writer(f)
             writer.writerow(["usuario", "senha"])
 
-#
+#Função que busca todos os usuarios e senhas no banco de dados:
 def buscar_usuarios() -> dict:
     inicializar_base_usuarios()
     usuarios = {}
@@ -36,6 +36,7 @@ def buscar_usuarios() -> dict:
                 usuarios[usr_descripto] = pwd_descripto
     return usuarios
 
+#Função para criar conta, validando se a senha tem 4 caracteres ou mais, valida nome de usuario, se ele ja esta no banco e retorna sucesso se passar em tudo:
 def criar_conta(usuario: str, senha: str) -> tuple[bool, str]:
     if len(senha) < 4:
         return False, "Erro: A senha deve ter no mínimo 4 caracteres."
@@ -58,6 +59,7 @@ def criar_conta(usuario: str, senha: str) -> tuple[bool, str]:
         
     return True, f"Conta criada com sucesso para '{usuario}'!"
 
+#Função para logar, verificando se usuario e senha correspondem ao que exite no banco de dados:
 def fazer_login(usuario: str, senha: str) -> tuple[bool, str]:
     usuario = usuario.strip()
     usuarios_existentes = buscar_usuarios()
