@@ -1,3 +1,5 @@
+#O requisito implementado é o sistema de alerta se as vagas são reservadas:
+
 def verificar_alerta_setor(dados_setor: dict):
     if dados_setor.get("restrito"):
         print("\n" + "=" * 55)

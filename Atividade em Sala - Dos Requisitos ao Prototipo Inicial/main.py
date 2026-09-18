@@ -18,7 +18,9 @@ def exibir_detalhes_vagas(lista_vagas: list[dict]):
 
 def menu_estacionamento(usuario: str):
     while True:
+        print(f"--------------------------------------------------")
         print(f"\n--- MENU ESTACIONAMENTO (Usuário: {usuario}) ---")
+        print(f"--------------------------------------------------")
         print("1. Ver todas as vagas")
         print("2. Consultar vagas por setor")
         print("0. Sair / Logout")
@@ -82,12 +84,3 @@ def main():
 if __name__ == "__main__":
     main()
 
-# ==============================================================================
-# AUTOAVALIAÇÃO (Passo 3):
-# Critérios Atingidos: Todos os 6 critérios atendidos com sucesso.
-# Maior Dificuldade: Tratar a criptografia simples sem depender de bibliotecas
-# externas (resolvido com módulo padrão 'base64').
-# Resolução do Fluxo CLI: A divisão de menus facilitou a validação antes da
-# navegação pelas vagas.
-# Uso da IA: Ajudou a gerar os protótipos de manipulação do CSV e formatação em tabela.
-# ==============================================================================

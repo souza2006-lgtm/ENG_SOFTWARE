@@ -1,3 +1,6 @@
+#O requisito implementado é o sistema de autenticação para acessar o sistema
+#A função principal na verdade são 2: fazer_login e criar_conta e tem algumas auxiliares
+
 import csv
 import os
 import base64

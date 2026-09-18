@@ -1,3 +1,5 @@
+#O requisito implementado é o sistema de vagas em si com a função carregar_vagas e outras auxiliares:
+
 import csv
 import os
 
